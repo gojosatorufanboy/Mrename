@@ -20,19 +20,19 @@
   "env": {
     "API_ID": {
       "description": "Your APP ID From my.telegram.org ",
-      "value": "",
+      "value": "4857766",
       "required": true
     },
 
     "API_HASH": {
       "description": "Your API Hash From my.telegram.org ",
-      "value": "",
+      "value": "6c3c6facf5598a4b318e138f8c407028",
       "required": true
     },
 
     "BOT_TOKEN": {
       "description": "Your Bot Token From @BotFather",
-      "value": "",
+      "value": "7184319844:AAG2HhhoNeSA85W40De1Iu-7NmRqg4Fndfc",
       "required": true
     },
 
@@ -56,31 +56,31 @@
 
     "FORCE_SUB": {
       "description": "Your force sub channel user name without [@] ",
-      "value": "",
+      "value": "hexafreinds",
       "required": true
     },
 
     "ADMIN": {
       "description": "Add Your User ID multiple is use space to split",
-      "value": "",
+      "value": "1596559467",
       "required": true
     },
 
     "LOG_CHANNEL": {
       "description": "Bot Log Sending Channel (just create a private channel and add bot to admin and take channel id to add this variable) ⚠️ id startswith -100 must",
-      "value": "",
+      "value": "-1001963446260",
       "required": true
     },
 
     "DB_URL": {
       "description": "Your Mongo DB URL Obtained From mongodb.com",
-      "value": "",
+      "value": "mongodb+srv://Filesstreambot:eHtqPEVohrO3YAS3@cluster0.hdxt929.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
       "required": true
     },
 
     "START_PIC": {
       "description": "Your Bot start cmd Pic from @HK_telegraph_BOT",
-      "value": "",
+      "value": "https://graph.org/file/93962115d4691bf425515.jpg",
       "required": false
     }
   }
