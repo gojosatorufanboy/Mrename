@@ -1,7 +1,7 @@
 {
-  "name": "Sigma Renamer Bot",
+  "name": "Mahesh Renamer Bot",
   "description": "Telegram File Renaming Bot With Metadata Feature ",
-  "logo": "https://telegra.ph/file/3b7050b8b5d918a00b490.jpg",
+  "logo": "https://graph.org/file/93962115d4691bf425515.jpg",
   "keywords": [
     "Renamer Bot",
     "Mongo DB",
@@ -14,7 +14,7 @@
     "Snowball",
     "Snowball-01"
   ],
-  "repository": "https://github.com/Snowball-0/Sigma-Snow-Bot",
+  "repository": "https://github.com/mahesh-kadali/Sigma",
   "success_url": "",
   "stack": "container",
   "env": {
@@ -49,7 +49,7 @@
     },
 
     "STRING_SESSION": {
-      "description": "Your Premium Account SESSION STRING Generate through this bot @SnowStringGenBot",
+      "description": "Your Premium Account SESSION STRING",
       "value": "",
       "required": false
     },
@@ -79,7 +79,7 @@
     },
 
     "START_PIC": {
-      "description": "Your Bot start cmd Pic from @HK_telegraph_BOT",
+      "description": "Your Bot start cmd Pic from @vtelegraphbot",
       "value": "https://graph.org/file/93962115d4691bf425515.jpg",
       "required": false
     }
