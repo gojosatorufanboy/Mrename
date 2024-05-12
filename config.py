@@ -88,7 +88,7 @@ Exᴀᴍᴩʟᴇ:- <code> /set_caption 📕 Fɪʟᴇ Nᴀᴍᴇ: {filename}
 
 ◦ <code> -map 0 -c:s copy -c:a copy -c:v copy -metadata title="Powered By:- mahesh" -metadata author="@maheshsirop" -metadata:s:s title="Subtitled By :- @cartoonandanimekingdom" -metadata:s:a title="By :- mahesh" -metadata:s:v title="By:- @cartoonandanimekingdom" </code>
 
-📥 Fᴏʀ Hᴇʟᴘ Cᴏɴᴛ. @Snowball_Official
+📥 Fᴏʀ Hᴇʟᴘ Cᴏɴᴛ. @maheshsirop
 """
 
     PROGRESS_BAR = """<b>\n
