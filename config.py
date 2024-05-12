@@ -9,7 +9,7 @@ class Config(object):
     # pyro client config
     API_ID = os.environ.get("API_ID", "4857766")  # ⚠️ Required
     API_HASH = os.environ.get("API_HASH", "6c3c6facf5598a4b318e138f8c407028")  # ⚠️ Required
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "6999986765:AAHZaxlSKqOXlPo6zYuIJyNjT7jakjJaa1k")  # ⚠️ Required
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "7119730638:AAGVtF2Pss3lqJnmqVu4GBg_fq_Pibc2qkU")  # ⚠️ Required
 
     # premium 4g renaming client
     STRING_API_ID = os.environ.get("STRING_API_ID", "")
