@@ -32,7 +32,7 @@
 
     "BOT_TOKEN": {
       "description": "Your Bot Token From @BotFather",
-      "value": "6999986765:AAHZaxlSKqOXlPo6zYuIJyNjT7jakjJaa1k",
+      "value": "",
       "required": true
     },
 
@@ -56,7 +56,7 @@
 
     "FORCE_SUB": {
       "description": "Your force sub channel user name without [@] ",
-      "value": "hexafreinds",
+      "value": "bakasnehitha",
       "required": true
     },
 
@@ -68,7 +68,7 @@
 
     "LOG_CHANNEL": {
       "description": "Bot Log Sending Channel (just create a private channel and add bot to admin and take channel id to add this variable) ⚠️ id startswith -100 must",
-      "value": "-1001963446260",
+      "value": "-1002012967146",
       "required": true
     },
 
