@@ -10,7 +10,6 @@ class Database:
         self._client = motor.motor_asyncio.AsyncIOMotorClient(uri)
         self.db = self._client[database_name]
         self.col = self.db.user
-
     def new_user(self, id):
         return dict(
             _id=int(id),
@@ -19,7 +18,7 @@ class Database:
             prefix=None,
             suffix=None,
             metadata=False,
-            metadata_code=""" -map 0 -c:s copy -c:a copy -c:v copy -metadata title="Powered By:- mahesh" -metadata author="@maheshsirop" -metadata:s:s title="Subtitled By :- @cartoonandanimekingdom" -metadata:s:a title="By :- mahesh" -metadata:s:v title="By:- @cartoonandanimekingdom" """
+            metadata_code=""" -map 0 -c:v libx265 -pix_fmt yuv420p -x265-params 'no-info=1' -crf 26 -s 854x480 -preset fast -vf 'drawtext=fontfile=font.ttf:fontsize=15:fontcolor=white:bordercolor=black@0.50:x=w-tw-10:y=10:box=1:boxcolor=black@0.5:boxborderw=6:text= Cartoon Anime Kingdom' -metadata title='Encoded By mahesh'  -metadata:s:v title='Encoded By mahesh'  -metadata:s:a title='Encoded By mahesh' -metadata:s:s title='Encoded By mahesh' -c:a libopus -ab 64k -ac 2 -c:s copy """
         )
 
     async def add_user(self, b, m):
