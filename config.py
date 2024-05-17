@@ -86,7 +86,7 @@ Exᴀᴍᴩʟᴇ:- <code> /set_caption 📕 Fɪʟᴇ Nᴀᴍᴇ: {filename}
 
 ☞ Fᴏʀ Exᴀᴍᴘʟᴇ:-
 
-◦ <code> :a -map 0 -c:v libx265 -pix_fmt yuv420p -x265-params 'no-info=1' -crf 26 -s 854x480 -preset fast -vf 'drawtext=fontfile=font.ttf:fontsize=15:fontcolor=white:bordercolor=black@0.50:x=w-tw-10:y=10:box=1:boxcolor=black@0.5:boxborderw=6:text= Cartoon Anime Kingdom' -metadata title='Encoded By mahesh'  -metadata:s:v title='Encoded By mahesh'  -metadata:s:a title='Encoded By mahesh' -metadata:s:s title='Encoded By mahesh' -c:a libopus -ab 64k -ac 2 -c:s copy </code>
+◦ <code>  -map 0 -c:v libx265 -pix_fmt yuv420p -x265-params 'no-info=1' -crf 26 -s 854x480 -preset fast -vf 'drawtext=fontfile=font.ttf:fontsize=15:fontcolor=white:bordercolor=black@0.50:x=w-tw-10:y=10:box=1:boxcolor=black@0.5:boxborderw=6:text= Cartoon Anime Kingdom' -metadata title='Encoded By mahesh'  -metadata:s:v title='Encoded By mahesh'  -metadata:s:a title='Encoded By mahesh' -metadata:s:s title='Encoded By mahesh' -c:a libopus -ab 64k -ac 2 -c:s copy </code>
 
 📥 Fᴏʀ Hᴇʟᴘ MESSAGE. @maheshsirop
 """
