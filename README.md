@@ -10,7 +10,7 @@
 
 ## Deploy To Render
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/MAHESH-KADALI/Sigma)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/gojosatorufanboy/Meta-renamer?tab=readme-ov-file)
 
 ## Deploy To Railway
 
