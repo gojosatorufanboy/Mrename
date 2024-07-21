@@ -26,6 +26,13 @@ class Config(object):
     ADMIN = [int(admin) if id_pattern.search(
         admin) else admin for admin in os.environ.get('ADMIN', '7172796863').split()]  # ⚠️ Required
     
+
+API = environ.get("API", "ccdd7d73458653f07aecbaa1d8159457965391b4") # shortlink api
+URL = environ.get("URL", "Publicearn") # shortlink domain without https://
+VERIFY_TUTORIAL = environ.get("VERIFY_TUTORIAL", "") # how to open link 
+BOT_USERNAME = environ.get("BOT_USERNAME", "SreeLeea_Renamebot") # bot username without @
+VERIFY = environ.get("VERIFY", "True") # set True Or False and make sure spelling is correct and first letter capital.
+
     FORCE_SUB = os.environ.get("FORCE_SUB", "log") # ⚠️ Required Username without @
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002156818435"))  # ⚠️ Required
     FLOOD = int(os.environ.get("FLOOD", '10'))
