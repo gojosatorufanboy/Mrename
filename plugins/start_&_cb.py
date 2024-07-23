@@ -2,13 +2,15 @@ from pyrogram import Client, filters
 from pyrogram.errors import FloodWait
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, CallbackQuery
 from helper.database import db
-from config import Config, Txt
+from config import Config, Txt, VERIFY, VERIFY_TUTORIAL, BOT_USERNAME
 import humanize
 from time import sleep
+from utils import verify_user, check_token, check_verification, get_token
 
 
 @Client.on_message(filters.private & filters.command("start"))
-async def start(client, message):
+async def start(bot, update):
+
 
     if message.from_user.id in Config.BANNED_USERS:
         await message.reply_text("Sorry, You are banned.")
@@ -25,8 +27,24 @@ async def start(client, message):
         InlineKeyboardButton('Aʙᴏᴜᴛ', callback_data='about'),
         InlineKeyboardButton('Hᴇʟᴩ', callback_data='help')
     ]])
+    if Config.START_PIC:
+        await message.reply_photo(Config.START_PIC, caption=Txt.START_TXT.format(user.mention), reply_markup=button)
+    else:
+        await message.reply_text(text=Txt.START_TXT.format(user.mention), reply_markup=button, disable_web_page_preview=True)
 
-    data = message.command[1]
+
+@Client.on_message(filters.private & (filters.document | filters.audio | filters.video))
+async def rename_start(client, message):
+    file = getattr(message, message.media.value)
+    filename = file.file_name
+    filesize = humanize.naturalsize(file.file_size)
+
+    if not Config.STRING_SESSION:
+        if file.file_size > 2000 * 1024 * 1024:
+            return await message.reply_text("Sᴏʀʀy Bʀᴏ Tʜɪꜱ Bᴏᴛ Iꜱ Dᴏᴇꜱɴ'ᴛ Sᴜᴩᴩᴏʀᴛ Uᴩʟᴏᴀᴅɪɴɢ Fɪʟᴇꜱ Bɪɢɢᴇʀ Tʜᴀɴ 2Gʙ")
+            client = bot
+message = update 
+data = message.command[1]
     if data.split("-", 1)[0] == "verify": # set if or elif it depend on your code
         userid = data.split("-", 2)[1]
         token = data.split("-", 3)[2]
@@ -47,22 +65,19 @@ async def start(client, message):
                 text="<b>Invalid link or Expired link !</b>",
                 protect_content=True
             )
-
-    if Config.START_PIC:
-        await message.reply_photo(Config.START_PIC, caption=Txt.START_TXT.format(user.mention), reply_markup=button)
-    else:
-        await message.reply_text(text=Txt.START_TXT.format(user.mention), reply_markup=button, disable_web_page_preview=True)
-
-
-@Client.on_message(filters.private & (filters.document | filters.audio | filters.video))
-async def rename_start(client, message):
-    file = getattr(message, message.media.value)
-    filename = file.file_name
-    filesize = humanize.naturalsize(file.file_size)
-
-    if not Config.STRING_SESSION:
-        if file.file_size > 2000 * 1024 * 1024:
-            return await message.reply_text("Sᴏʀʀy Bʀᴏ Tʜɪꜱ Bᴏᴛ Iꜱ Dᴏᴇꜱɴ'ᴛ Sᴜᴩᴩᴏʀᴛ Uᴩʟᴏᴀᴅɪɴɢ Fɪʟᴇꜱ Bɪɢɢᴇʀ Tʜᴀɴ 2Gʙ")
+            if not await check_verification(client, message.from_user.id) and VERIFY == True:
+            btn = [[
+                InlineKeyboardButton("Verify", url=await get_token(client, message.from_user.id, f"https://telegram.me/{BOT_USERNAME}?start="))
+            ],[
+                InlineKeyboardButton("How To Open Link & Verify", url=VERIFY_TUTORIAL)
+            ]]
+            await message.reply_text(
+                text="<b>You are not verified !\nKindly verify to continue !</b>",
+                protect_content=True,
+                reply_markup=InlineKeyboardMarkup(btn)
+            )
+            return
+            
 
     try:
         text = f"""**__What do you want me to do with this file.?__**\n\n**File Name** :- `{filename}`\n\n**File Size** :- `{filesize}`"""
