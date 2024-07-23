@@ -33,7 +33,7 @@ VERIFY_TUTORIAL = environ.get("VERIFY_TUTORIAL", "") # how to open link
 BOT_USERNAME = environ.get("BOT_USERNAME", "SreeLeea_Renamebot") # bot username without @
 VERIFY = environ.get("VERIFY", "True") # set True Or False and make sure spelling is correct and first letter capital.
 
-    FORCE_SUB = os.environ.get("FORCE_SUB", "log") # ⚠️ Required Username without @
+    FORCE_SUB = os.environ.get("FORCE_SUB", "hexafreinds") # ⚠️ Required Username without @
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002156818435"))  # ⚠️ Required
     FLOOD = int(os.environ.get("FLOOD", '10'))
     BANNED_USERS = set(int(x) for x in os.environ.get(
