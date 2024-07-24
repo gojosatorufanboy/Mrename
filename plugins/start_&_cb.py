@@ -43,8 +43,8 @@ async def rename_start(client, message):
         if file.file_size > 2000 * 1024 * 1024:
             return await message.reply_text("Sᴏʀʀy Bʀᴏ Tʜɪꜱ Bᴏᴛ Iꜱ Dᴏᴇꜱɴ'ᴛ Sᴜᴩᴩᴏʀᴛ Uᴩʟᴏᴀᴅɪɴɢ Fɪʟᴇꜱ Bɪɢɢᴇʀ Tʜᴀɴ 2Gʙ")
             client = bot
-message = update 
-data = message.command[1]
+    message = update 
+    data = message.command[1]
     if data.split("-", 1)[0] == "verify": # set if or elif it depend on your code
         userid = data.split("-", 2)[1]
         token = data.split("-", 3)[2]
