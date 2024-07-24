@@ -2,14 +2,14 @@ from pyrogram import Client, filters
 from pyrogram.errors import FloodWait
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, CallbackQuery
 from helper.database import db
-from config import Config, Txt, VERIFY, VERIFY_TUTORIAL, BOT_USERNAME
+from config import Config, Txt
 import humanize
 from time import sleep
 from utils import verify_user, check_token, check_verification, get_token
 
 
 @Client.on_message(filters.private & filters.command("start"))
-async def start(bot, update):
+async def start(client, message):
 
 
     if message.from_user.id in Config.BANNED_USERS:
@@ -42,8 +42,7 @@ async def rename_start(client, message):
     if not Config.STRING_SESSION:
         if file.file_size > 2000 * 1024 * 1024:
             return await message.reply_text("Sᴏʀʀy Bʀᴏ Tʜɪꜱ Bᴏᴛ Iꜱ Dᴏᴇꜱɴ'ᴛ Sᴜᴩᴩᴏʀᴛ Uᴩʟᴏᴀᴅɪɴɢ Fɪʟᴇꜱ Bɪɢɢᴇʀ Tʜᴀɴ 2Gʙ")
-            client = bot
-    message = update 
+
     data = message.command[1]
     if data.split("-", 1)[0] == "verify": # set if or elif it depend on your code
         userid = data.split("-", 2)[1]
@@ -65,19 +64,19 @@ async def rename_start(client, message):
                 text="<b>Invalid link or Expired link !</b>",
                 protect_content=True
             )
-            if not await check_verification(client, message.from_user.id) and VERIFY == True:
-                btn = [[
-                    InlineKeyboardButton("Verify", url=await get_token(client, message.from_user.id, f"https://telegram.me/{BOT_USERNAME}?start="))
-                ],[
-                    InlineKeyboardButton("How To Open Link & Verify", url=VERIFY_TUTORIAL)
-                ]]
-            await message.reply_text(
-                text="<b>You are not verified !\nKindly verify to continue !</b>",
-                protect_content=True,
-                reply_markup=InlineKeyboardMarkup(btn)
-            )
-            return
-            
+        if not await check_verification(client, message.from_user.id) and Config.VERIFY == True:
+            btn = [[
+                InlineKeyboardButton("Verify", url=await get_token(client, message.from_user.id, f"https://telegram.me/{Config.BOT_USERNAME}?start="))
+            ],[
+                InlineKeyboardButton("How To Open Link & Verify", url=Config.VERIFY_TUTORIAL)
+            ]]
+        await message.reply_text(
+            text="<b>You are not verified !\nKindly verify to continue !</b>",
+            protect_content=True,
+            reply_markup=InlineKeyboardMarkup(btn)
+        )
+        return
+
 
     try:
         text = f"""**__What do you want me to do with this file.?__**\n\n**File Name** :- `{filename}`\n\n**File Size** :- `{filesize}`"""
