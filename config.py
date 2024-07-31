@@ -1,15 +1,20 @@
 import re
 import os
 import time
+from dotenv import load_dotenv
+
+env_path = "config.env"
+
+load_dotenv(dotenv_path=env_path)
 
 id_pattern = re.compile(r'^.\d+$')
 
 
 class Config(object):
     # pyro client config
-    API_ID = os.environ.get("API_ID", "9976721")  # ⚠️ Required
-    API_HASH = os.environ.get("API_HASH", "3ef17a8cdb938335bd8ba292e6d816aa")  # ⚠️ Required
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "6656673902:AAF28RKheBuTAunLzp_OgVK9oGZxjeaIMBI")  # ⚠️ Required
+    API_ID = os.environ.get("API_ID", "4857766")  # ⚠️ Required
+    API_HASH = os.environ.get("API_HASH", "6c3c6facf5598a4b318e138f8c407028")  # ⚠️ Required
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "7119730638:AAGVtF2Pss3lqJnmqVu4GBg_fq_Pibc2qkU")  # ⚠️ Required
 
     # premium 4g renaming client
     STRING_API_ID = os.environ.get("STRING_API_ID", "")
@@ -18,23 +23,16 @@ class Config(object):
 
     # database config
     DB_NAME = os.environ.get("DB_NAME", "Snow_User_Data")
-    DB_URL = os.environ.get("DB_URL", "mongodb+srv://gojomerge:5exfugtttf@cluster0.mefkdax.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")  # ⚠️ Required
+    DB_URL = os.environ.get("DB_URL", "mongodb+srv://Filesstreambot:eHtqPEVohrO3YAS3@cluster0.hdxt929.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")  # ⚠️ Required
 
     # other configs
     BOT_UPTIME = time.time()
-    START_PIC = os.environ.get("START_PIC", "")
+    START_PIC = os.environ.get("START_PIC", "https://graph.org/file/93962115d4691bf425515.jpg")
     ADMIN = [int(admin) if id_pattern.search(
-        admin) else admin for admin in os.environ.get('ADMIN', '7172796863').split()]  # ⚠️ Required
-
-
-    API = os.environ.get("API", "ccdd7d73458653f07aecbaa1d8159457965391b4") # shortlink api
-    URL = os.environ.get("URL", "publicearn.com") # shortlink domain without https://
-    VERIFY_TUTORIAL = os.environ.get("VERIFY_TUTORIAL", "") # how to open link
-    BOT_USERNAME = os.environ.get("BOT_USERNAME", "SreeLeea_Renamebot") # bot username without @
-    VERIFY = os.environ.get("VERIFY", "True") # set True Or False and make sure spelling is correct and first letter capital.
+        admin) else admin for admin in os.environ.get('ADMIN', '1596559467').split()]  # ⚠️ Required
 
     FORCE_SUB = os.environ.get("FORCE_SUB", "hexafreinds") # ⚠️ Required Username without @
-    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002156818435"))  # ⚠️ Required
+    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1001963446260"))  # ⚠️ Required
     FLOOD = int(os.environ.get("FLOOD", '10'))
     BANNED_USERS = set(int(x) for x in os.environ.get(
         "BANNED_USERS", "1234567890").split())
@@ -42,6 +40,12 @@ class Config(object):
     # wes response configuration
     WEBHOOK = bool(os.environ.get("WEBHOOK", True))
     PORT = int(os.environ.get("PORT", "8080"))
+
+    API = os.environ.get("API", "ccdd7d73458653f07aecbaa1d8159457965391b4") # shortlink api
+    URL = os.environ.get("URL", "publicearn.com") # shortlink domain without https://
+    VERIFY_TUTORIAL = os.environ.get("VERIFY_TUTORIAL", "https://t.me/ShortenerBypass/2") # how to open link
+    BOT_USERNAME = os.environ.get("BOT_USERNAME", "SreeLeea_Renamebot") # bot username without @
+    VERIFY = os.environ.get("VERIFY", True) # set True Or False and make sure spelling is correct and first letter capital.
 
 
 class Txt(object):
@@ -105,4 +109,3 @@ Exᴀᴍᴩʟᴇ:- <code> /set_caption 📕 Fɪʟᴇ Nᴀᴍᴇ: {filename}
 ┣⪼ 🚀 Sᴩᴇᴇᴅ: {3}/s
 ┣⪼ ⏰️ Eᴛᴀ: {4}
 ╰━━━━━━━━━━━━━━━➣ </b>"""
-
