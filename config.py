@@ -23,7 +23,7 @@ class Config(object):
 
     # database config
     DB_NAME = os.environ.get("DB_NAME", "Snow_User_Data")
-    DB_URL = os.environ.get("DB_URL", "mongodb+srv://Filesstreambot:eHtqPEVohrO3YAS3@cluster0.hdxt929.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")  # ⚠️ Required
+    DB_URL = os.environ.get("DB_URL", "mongodb+srv://filetolink:edyyrdsrdddesrd@cluster0.axmk9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")  # ⚠️ Required
 
     # other configs
     BOT_UPTIME = time.time()
